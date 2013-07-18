@@ -22,7 +22,8 @@
 	* In a pattern-action statement either the pattern or the action may be missing.
 		* pattern missing: the action statements are applied to every single line
 		* statement missing: { print }
-	* some examples
+	* some examples:
+	
 	```awk
 	awk '1'
 	awk '1;'
@@ -46,30 +47,30 @@
 	```
 5. Idiomatic awk
 	* The power of conditions
-		```awk
-		# If all u want to do is print some lines, 
-		# u can wirte awk programs composed only of a 
-		# condition (complex sometimes)
-		awk '{if (/pattern/)print $0}'
-		awk '/pattern/ {print $0}'
-		awk '/pattern/ {print}'
-		awk '/pattern/'
-		
-		awk 'NR % 6'            # prints all lines except lines 6,12,18...
-		awk 'NR > 5'            # prints from line 6 onwards (like tail -n +6, or sed '1,5d')
-		awk '$2 == "foo"'       # prints lines where the second field is "foo"
-		awk 'NF >= 6'           # prints lines with 6 or more fields
-		awk '/foo/ && /bar/'    # prints lines that match /foo/ and /bar/, in any order
-		awk '/foo/ && !/bar/'   # prints lines that match /foo/ but not /bar/
-		awk '/foo/ || /bar/'    # prints lines that match /foo/ or /bar/ (like grep -e 'foo' -e 'bar')
-		awk '/foo/,/bar/'       # prints from line matching /foo/ to line matching /bar/, inclusive
-		awk 'NF'                # prints only nonempty lines (or: do not print empty lines, where NF==0)
-		awk NF                  # prints only nonempty lines (or: do not print empty lines, where NF==0)
-		awk 'NF--' a             # removes last field and prints the line
-		awk '$0 = NR" "$0'      # prepends line numbers (assignments are valid in conditions)
-		awk '!a[$0]++'          # suppresses duplicated lines! (figure out how it works)
-		```
-		
+	
+	```awk
+	# If all u want to do is print some lines, 
+	# u can wirte awk programs composed only of a 
+	# condition (complex sometimes)
+	awk '{if (/pattern/)print $0}'
+	awk '/pattern/ {print $0}'
+	awk '/pattern/ {print}'
+	awk '/pattern/'
+	
+	awk 'NR % 6'            # prints all lines except lines 6,12,18...
+	awk 'NR > 5'            # prints from line 6 onwards (like tail -n +6, or sed '1,5d')
+	awk '$2 == "foo"'       # prints lines where the second field is "foo"
+	awk 'NF >= 6'           # prints lines with 6 or more fields
+	awk '/foo/ && /bar/'    # prints lines that match /foo/ and /bar/, in any order
+	awk '/foo/ && !/bar/'   # prints lines that match /foo/ but not /bar/
+	awk '/foo/ || /bar/'    # prints lines that match /foo/ or /bar/ (like grep -e 'foo' -e 'bar')
+	awk '/foo/,/bar/'       # prints from line matching /foo/ to line matching /bar/, inclusive
+	awk 'NF'                # prints only nonempty lines (or: do not print empty lines, where NF==0)
+	awk NF                  # prints only nonempty lines (or: do not print empty lines, where NF==0)
+	awk 'NF--' a             # removes last field and prints the line
+	awk '$0 = NR" "$0'      # prepends line numbers (assignments are valid in conditions)
+	awk '!a[$0]++'          # suppresses duplicated lines! (figure out how it works)
+	```
 5. Reference
 	* http://www.catonmat.net/download/awk.cheat.sheet.pdf
 	* http://www.catonmat.net/blog/awk-one-liners-explained-part-two/
