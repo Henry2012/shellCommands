@@ -5,7 +5,7 @@
 4. Shortcuts in Ubuntu:
 	* Alt + Tab
 	* Win + 1
-	* Alt + ` 切换同一类app的不同instances
+	* Alt + ` 切换同一类型app的不同instances
 	* Ctrl + Shift + t 新建一个terminal
-	* right Ctrl + l 高清Ubuntu界面
+	* right Ctrl + L 高清Ubuntu界面
 5. Ubuntu锁定App, "Lock to Launcher"
