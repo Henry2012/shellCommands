@@ -7,4 +7,5 @@
 	* Win + 1
 	* Alt + ` 切换同一类app的不同instances
 	* Ctrl + Shift + t 新建一个terminal
+	* right Ctrl + l 高清Ubuntu界面
 5. Ubuntu锁定App, "Lock to Launcher"
